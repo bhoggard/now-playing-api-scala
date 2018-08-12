@@ -2,9 +2,13 @@ language: scala
 jdk: oraclejdk8
 scala: 2.12.6
 sudo: false
-
 cache:
   directories:
-  - $HOME/.m2/repository
-  - $HOME/.sbt
-  - $HOME/.ivy2
+  - "$HOME/.m2/repository"
+  - "$HOME/.sbt"
+  - "$HOME/.ivy2"
+deploy:
+  provider: heroku
+  app: now-playing-api-scala
+  api_key:
+    secure: ryCiYCOWqKPYutzhJgy7AXJ7THiI+56Ag8qnrhXqDTBGKdxjBf/oeORXu/VeqSecpyGmLVy7KJv6KPt3u/urR/vSlsZhAhXKVLqDx7dY4N4jA7p2tApPUUm3sFl4zVl2kDzPI9jfRbLRsht7oXpuN0ik5jl9MBjB0Iwj/fv5N0EXDvKMoFlzCEcg8BlBvcn+fzRYlNG+TWhDNYoblhfPWdMWf4/GT/LPuXfp0eyVyBEUKYaV6G7Y/2BvJRGKC8vsE7dswupShuB2g+aYjj/g77yNWOdzrmgZ3G0GlRXKzakHT0T54p+SECwK/BFxCdNIAKKp/vwpxwb1ulzw3g7lDrhMsQirdQmH35aHfEzrEvjOFLTdDMHBDwy2NfIHY33yO6c3Hm8kLfgNkezxIRGqDmaT7a9TTP9aVA3Nz9ly4ydklmLPoIR0nYCfVZWMzsi4nDcNoi8jqvFyJfAq7IozDCWh2Q0UPwUZprSPIMOHFP6HkggGT+xlLUh9hDroNRpgsejDiF+xb00H9df+oU+KTa1HT2M9pf78bAcMBWzse6/VVNPaPdVHZT80tAlFsDOgmpft0N4lDMoxkhFyY6Bc3BGMuBikcnvcdfkcjzcjezgDcqZngZXIqRu8t3l/EEQyTToj4d9bPJRVvwJqnqJCkazAXoZDYFjB37WqSZ9YKaQ=
