@@ -1,3 +1,5 @@
-GET     /api/counterstream                controllers.ApiController.counterstream
-GET     /api/q2                           controllers.ApiController.q2
+GET     /api/counterstream       controllers.ApiController.counterstream
+GET     /api/dronezone           controllers.ApiController.dronezone
+GET     /api/q2                  controllers.ApiController.q2
+GET     /api/yle                  controllers.ApiController.yle
 

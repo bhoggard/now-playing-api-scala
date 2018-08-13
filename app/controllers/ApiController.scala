@@ -16,8 +16,16 @@ class ApiController @Inject()(cc: ControllerComponents)
     Ok(Json.toJson(FeedService.counterstream))
   }
 
+  def dronezone() = Action { implicit request: Request[AnyContent] =>
+    Ok(Json.toJson(FeedService.dronezone))
+  }
+
   def q2() = Action { implicit request: Request[AnyContent] =>
     Ok(Json.toJson(FeedService.q2))
+  }
+
+  def yle() = Action { implicit request: Request[AnyContent] =>
+    Ok(Json.toJson(FeedService.yle))
   }
 
 }
