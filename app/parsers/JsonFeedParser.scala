@@ -1,12 +1,15 @@
-package services
+package parsers
 
 import models.Piece
 import play.api.Logger
-import play.api.libs.json._
-import play.api.libs.json.Reads._
 import play.api.libs.functional.syntax._
+import play.api.libs.json.Reads._
+import play.api.libs.json._
 
-trait FeedParser {
+import scala.xml.Elem
+
+// trait for JSON parsing
+sealed trait JsonFeedParser {
 
   implicit val reader: Reads[Piece]
 
@@ -22,7 +25,7 @@ trait FeedParser {
     validationResult(json.validate[Piece])
 }
 
-object Q2Parser extends FeedParser {
+object Q2Parser extends JsonFeedParser {
 
   implicit val reader: Reads[Piece] = (
     (JsPath \ "current_playlist_item" \ "catalog_entry" \ "title")
