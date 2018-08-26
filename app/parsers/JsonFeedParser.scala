@@ -6,6 +6,8 @@ import play.api.libs.functional.syntax._
 import play.api.libs.json.Reads._
 import play.api.libs.json._
 
+import scala.concurrent.{ ExecutionContext, Future }
+
 // trait for JSON parsing
 sealed trait JsonFeedParser {
 
@@ -19,8 +21,12 @@ sealed trait JsonFeedParser {
     }
   }
 
-  def parse(json: JsValue): Option[Piece] =
-    validationResult(json.validate[Piece])
+  def parse(
+    fJson: Future[JsValue]
+  )(implicit ec: ExecutionContext): Future[Option[Piece]] =
+    fJson map { json =>
+      validationResult(json.validate[Piece])
+    }
 }
 
 object Q2Parser extends JsonFeedParser {
